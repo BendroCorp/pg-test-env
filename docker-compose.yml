@@ -1,0 +1,14 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.5
+    ports:
+    - "5432:5432"
+    environment:
+      - POSTGRES_USER=bendro_admin
+      - POSTGRES_PASSWORD=Password12345
+      - POSTGRES_DB=bendrocorp_test_db
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+# Remember when you first setup the container you will need to run: CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
